@@ -2,7 +2,7 @@
     <!-- 模板中只能有1个根节点 -->
     <div class="index-page">
         <text class="title">page{{pageName}}</text>
-        <input class="btn" type="button" value="跳转到详情页" onclick="jump">
+        <input class="btn" type="button" value="跳转到测试" onclick="jump">
     </div>
 </template>
 <style>
@@ -40,6 +40,7 @@ export default {
         // console.log(`app的数据: data1 ==> ${this.$app.$def.data1.name}`)
         // console.log(`app的方法: method1 ==> ${this.$app.$def.method1}`)
         // console.log(`manifest.json的数据: configData ==> ${this.$app.$data.configData}`)
+        this.$page.setTitleBar({ text: '首页' })
     },
     onReady() {
         // 表示ViewModel的模板已经编译完成，可以开始获取DOM节点
