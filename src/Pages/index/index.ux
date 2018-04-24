@@ -32,27 +32,41 @@ import router from '@system.router'
 
 export default {
     onInit() {
-        // 表示ViewModel的数据已经准备好，可以开始使用页面中的数据(方法也可以使用，不仅仅页面，app.ux中定义的数据和方法、manifest.json的config.data的数据也可以)
+        // 表示ViewModel的数据已经准备好，可以开始使用页面中的数据
+        // (方法也可以使用，不仅仅页面，app.ux中定义的数据和方法、manifest.json的config.data的数据也可以)
         console.log('Page onInit')
-        console.log(`page的数据: pageName ==> ${this.pageName}`)
-        console.log(`page的方法: jump ==> ${this.jump}`)
-        console.log(`app的数据: data1 ==> ${this.$app.$def.data1.name}`)
-        console.log(`app的方法: method1 ==> ${this.$app.$def.method1}`)
-        console.log(`manifest.json的数据: configData ==> ${this.$app.$data.configData}`)
+        // console.log(`page的数据: pageName ==> ${this.pageName}`)
+        // console.log(`page的方法: jump ==> ${this.jump}`)
+        // console.log(`app的数据: data1 ==> ${this.$app.$def.data1.name}`)
+        // console.log(`app的方法: method1 ==> ${this.$app.$def.method1}`)
+        // console.log(`manifest.json的数据: configData ==> ${this.$app.$data.configData}`)
     },
     onReady() {
+        // 表示ViewModel的模板已经编译完成，可以开始获取DOM节点
         console.log('Page onReady')
+        // console.info(`获取模板节点: ${this.$rootElement()}`)
     },
     onShow() {
+        // 判断页面的显示状态，可以调用ViewModel的$visible属性：true表示显示，false表示隐藏
         console.log('Page onShow')
+        // console.info(`页面显示状态属性: ${this.$visible}`)
     },
     onHide() {
         console.log('Page onHide')
+        // console.info(`页面显示状态属性: ${this.$visible}`)
     },
     onDestroy() {
+        // 页面被销毁时调用，被销毁的可能原因有：
+        //     1、用户从当前页面返回到上一页
+        //     2、用户打开了太多的页面，框架自动销毁掉部分页面，避免占用资源
+        // 所以，页面销毁时应该做一些释放资源的操作，如：取消接口订阅监听geolocation.unsubscribe()
+        // 判断页面是否处于被销毁状态，可以调用ViewModel的$valid属性：true表示存在，false表示销毁
         console.log('Page onDestroy')
+        // console.info(`销毁状态：${this.$valid}`)
     },
     onBackPress() {
+        // 当用户点击返回实体按键、左上角返回菜单、调用返回API时触发该事件
+        // 如果事件响应方法最后返回true表示不返回，自己处理业务逻辑
         console.log('Page onBackPress')
     },
     onMenuPress() {
@@ -65,6 +79,9 @@ export default {
         router.push({
             uri: '/Pages/test'
         })
+        // router.replace({
+        //     uri: '/Pages/test'
+        // })
     }
 }
 </script>
