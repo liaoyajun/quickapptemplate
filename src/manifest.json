@@ -14,6 +14,9 @@
     { "origin": "*" }
   ],
   "config": {
+    "data": {
+      "configData": "test"
+    },
     "logLevel": "debug",
     "designWidth": 750
   },

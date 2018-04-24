@@ -32,7 +32,13 @@ import router from '@system.router'
 
 export default {
     onInit() {
+        // 表示ViewModel的数据已经准备好，可以开始使用页面中的数据(方法也可以使用，不仅仅页面，app.ux中定义的数据和方法、manifest.json的config.data的数据也可以)
         console.log('Page onInit')
+        console.log(`page数据: pageName ==> ${this.pageName}`)
+        console.log(`page方法: jump ==> ${this.jump}`)
+        console.log(`app数据: data1 ==> ${this.$app.$def.data1.name}`)
+        console.log(`app方法: method1 ==> ${this.$app.$def.method1}`)
+        console.log(`manifest.json的数据: configData ==> ${this.$app.$data.configData}`)
     },
     onReady() {
         console.log('Page onReady')

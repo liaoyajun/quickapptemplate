@@ -22,7 +22,8 @@
     "na:ol": "cross-env NODE_PLATFORM=na NODE_PHASE=ol webpack --config ./node_modules/hap-tools/webpack.config.js",
     "postinstall": "npm run postinstall:koaStatic && npm run postinstall:koaSend",
     "postinstall:koaStatic": "babel -d ./node_modules/koa-static ./node_modules/koa-static",
-    "postinstall:koaSend": "babel -d ./node_modules/koa-send ./node_modules/koa-send"
+    "postinstall:koaSend": "babel -d ./node_modules/koa-send ./node_modules/koa-send",
+    "push2git": "bash ./upload2git.sh"
   },
   "dependencies": {
     "archiver": "^1.3.0",
