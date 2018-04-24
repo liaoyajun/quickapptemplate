@@ -1,0 +1,26 @@
+<script>
+  /**
+   * 应用级别的配置，供所有页面公用
+   */
+  import util from './util'
+
+  export default {
+    onCreate () {
+      console.info('Application onCreate')
+    },
+    onDestroy () {
+      console.info('Application onDestroy')
+    },
+    // 暴露给所有页面，在页面中通过：this.$app.$def.data1访问
+    data1: {
+      name: 'Application data1'
+    },
+    // 暴露给所有页面，在页面中通过：this.$app.$def.method1()访问
+    // 脚手架生成的页面见到是通过this.$app.method1()访问的，待验证
+    method1 () {
+      console.info('Application method1')
+    },
+    showMenu: util.showMenu,
+    createShortcut: util.createShortcut
+  }
+</script>

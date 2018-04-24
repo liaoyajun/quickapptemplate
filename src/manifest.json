@@ -1,0 +1,49 @@
+{
+  "package": "com.application.demo",
+  "name": "快应用模板",
+  "versionName": "1.0.0",
+  "versionCode": "1",
+  "minPlatformVersion": "101",
+  "icon": "/Common/image/logo.png",
+  "features": [
+    { "name": "system.prompt" },
+    { "name": "system.router" },
+    { "name": "system.shortcut" }
+  ],
+  "permissions": [
+    { "origin": "*" }
+  ],
+  "config": {
+    "logLevel": "debug",
+    "designWidth": 750
+  },
+  "router": {
+    "entry": "Pages/index",
+    "pages": {
+      "Pages/index": {
+        "component": "index"
+      },
+      "Pages/test": {
+        "component": "index"
+      }
+    }
+  },
+  "display": {
+    "backgroundColor": "#ffffff",
+    "fullScreen": true,
+    "titleBar": true,
+    "titleBarBackgroundColor": "#f2f2f2",
+    "titleBarTextColor": "#414141",
+    "titleBarText": "默认标题",
+    "menu": true,
+    "pages": {
+      "Pages/index": {
+        "titleBarText": "首页",
+        "menu": false
+      },
+      "Pages/test": {
+        "titleBarText": "测试页面"
+      }
+    }
+  }
+}

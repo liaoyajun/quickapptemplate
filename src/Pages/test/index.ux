@@ -1,0 +1,20 @@
+<template>
+    <div class="index-page">
+        <text class="title">page{{pageName}}</text>
+    </div>
+</template>
+<style>
+.index-page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+</style>
+<script>
+
+export default {
+    data: {
+        pageName: '测试页'
+    }
+}
+</script>
