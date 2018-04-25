@@ -78,6 +78,13 @@
   ```
   * 默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。该属性可能取6个值，除了auto，其他都与align-items属性完全一致。
 
+### 快应用不支持的样式
+
+* display的有效枚举值为none和flex
+* position的有效枚举值为none和fixed
+* border-xxx类
+* letter-spacing
+
 ### 遗留问题
 
 #### 无
