@@ -79,7 +79,7 @@ export default {
     },
     jump() {
         router.push({
-            uri: '/Pages/test'
+            uri: '/Pages/test1'
         })
         // router.replace({
         //     uri: '/Pages/test'

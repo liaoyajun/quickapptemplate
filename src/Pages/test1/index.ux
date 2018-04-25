@@ -1,81 +1,85 @@
 <!-- 框架指令 -->
 <template>
-    <div class="index-page">
-        <!-- 指令for -->
-        <div class="for-template">
-            <!-- 方式1：默认$item代表数组中的元素, $idx代表数组中的索引 -->
-            <div class="for-row" for="{{list}}">
-                <text>{{$idx}}.{{$item.name}}</text>
-            </div>
-            <!-- 方式2：自定义元素变量名称 -->
-            <div class="for-row" for="value in list">
-                <text>{{$idx}}.{{value.name}}</text>
-            </div>
-            <!-- 方式3：自定义元素、索引的变量名称 -->
-            <div class="for-row" for="(personIndex, personItem) in list">
-                <text>{{personIndex}}.{{personItem.name}}</text>
-            </div>
-        </div>
-        <!-- 指令if与指令show -->
-        <!-- if条件指令，是指if/elif/else这3个相关指令，用于控制是否增加或者删除组件； -->
-        <!-- show指令，是指是否显示组件，用于控制组件的显示状态，并不会从DOM结构中删除 -->
-        <div class="if-show-page">
-            <text onclick="onClickShow">显示隐藏：</text>
-            <text show="{{showVar}}">show: 渲染但控制是否显示</text>
-
-            <text onclick="onClickCondition">条件指令：</text>
-            <text if="{{conditionVar === 1}}">if: if条件</text>
-            <text elif="{{conditionVar === 2}}">elif: elif条件</text>
-            <text else>else: 其余</text>
-        </div>
+  <div class="index-page">
+    <!-- 指令for -->
+    <div class="for-template">
+      <text class="title">1、指令for</text>
+      <!-- 方式1：默认$item代表数组中的元素, $idx代表数组中的索引 -->
+      <text class="for-row" for="{{list}}">{{$idx}}.{{$item.name}}</text>
+      <!-- 方式2：自定义元素变量名称 -->
+      <text class="for-row" for="value in list">{{$idx}}.{{value.name}}</text>
+      <!-- 方式3：自定义元素、索引的变量名称 -->
+      <text class="for-row" for="(personIndex, personItem) in list">{{personIndex}}.{{personItem.name}}</text>
     </div>
+    <!-- 指令if与指令show -->
+    <!-- if条件指令，是指if/elif/else这3个相关指令，用于控制是否增加或者删除组件； -->
+    <!-- show指令，是指是否显示组件，用于控制组件的显示状态，并不会从DOM结构中删除 -->
+    <div class="if-show-template">
+      <text class="title">2、指令if/show</text>
+      <text class="show-row" onclick="onClickShow">显示隐藏：</text>
+      <text class="show-row" show="{{showVar}}">show: 渲染但控制是否显示</text>
+
+      <text class="if-row" onclick="onClickCondition">条件指令：</text>
+      <text class="if-row" if="{{conditionVar === 1}}">if: if条件</text>
+      <text class="if-row" elif="{{conditionVar === 2}}">elif: elif条件</text>
+      <text class="if-row" else>else: 其余</text>
+    </div>
+    <!-- 组件block -->
+    <!-- 逻辑区块的组件，没有对应的Native组件 -->
+    <div class="block-template">
+      <text class="title">3、组件block</text>
+      <text class="block-row" onclick="onClickShow">显示隐藏：</text>
+      <block if="{{showVar}}">
+        <text class="block-row">show: 渲染但控制是否显示</text>
+      </block>
+    </div>
+  </div>
 </template>
 <style>
 text {
-    background-color: cyan;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .index-page {
-    flex-direction: column;
+  flex-direction: column;
 }
 
-.for-template {
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.for-row {
-    flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 85%;
-    background-color: green;
-    text-align: center;
+.title {
+  margin-top: 20px;
+  padding-left: 60px;
+  font-size: 40px;
+  text-align: left;
+  background-color: #B0C4DE;
 }
 
-.if-show-page {
-    flex-direction: column;
+.for-template, .if-show-template, .block-template {
+  flex-direction: column;
+  align-items: center;
+}
+
+.for-row, .if-row, .show-row, .block-row {
+  margin-top: 10px;
+  width: 85%;
 }
 </style>
 <script>
 export default {
-    private: {
-        // for指令
-        list: [
-            { name: 'aa' },
-            { name: 'bb' }
-        ],
-        // if/show
-        showVar: true,
-        conditionVar: 1
-    },
-    onClickShow () {
-        this.showVar = !this.showVar
-    },
-    onClickCondition () {
-        this.conditionVar = ++this.conditionVar % 3
-    }
+  private: {
+    // for指令
+    list: [
+      { name: 'aa' },
+      { name: 'bb' }
+    ],
+    // if/show
+    showVar: true,
+    conditionVar: 1
+  },
+  onClickShow() {
+    this.showVar = !this.showVar
+  },
+  onClickCondition() {
+    this.conditionVar = ++this.conditionVar % 3
+  }
 }
 </script>

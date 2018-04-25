@@ -1,6 +1,13 @@
 <script>
 /**
  * 应用级别的配置，供所有页面公用
+ * $app与$app.$def
+ * 前者代表框架为开发者暴露提供的APP对象；后者代表开发者在app.ux中导出的对象，放置业务相关的全局数据和方法；
+ * 前者对象拥有onCreate, onDestroy生命周期；当应用启动时会执行onCreate方法，里面执行this.variable1的赋值是在$app对象上；
+ * 后者对象中的onCreate, onDestroy方法并不会执行，作用仅仅只是把方法复制到前者对象上而已；
+ * 也就是在生命周期内定义的变量，后者获取不到；
+ * 这些全局方法在页面中：既可以通过this.$app.method1()调用，也可以通过this.$app.$def.method1()调用；
+ * 不同之处在于前者可以取到之前赋值的variable1变量，而后者不可以取到（因为之前的赋值是在$app对象上执行的）；
  */
 
 import util from './util'
