@@ -6,26 +6,24 @@
     <input class="btn" type="button" value="跳转到测试" onclick="jump">
   </div>
 </template>
-<style>
+<style lang="less">
 .index-page {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.title {
-  font-size: 40px;
-  text-align: center;
-}
-
-.btn {
-  width: 550px;
-  height: 86px;
-  margin-top: 75px;
-  border-radius: 43px;
-  background-color: #09ba07;
-  font-size: 30px;
-  color: #ffffff;
+  .title {
+    font-size: 40px;
+    text-align: center;
+  }
+  .btn {
+    width: 550px;
+    height: 86px;
+    margin-top: 75px;
+    border-radius: 43px;
+    background-color: #09ba07;
+    font-size: 30px;
+    color: #ffffff;
+  }
 }
 </style>
 <script>
