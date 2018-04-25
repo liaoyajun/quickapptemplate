@@ -3,7 +3,8 @@
 ### flex常用属性
 
 #### 容器的属性
-* `flex-direction` 属性决定主轴的方向（即项目的排列方向）。
+* flex-direction
+* 属性决定主轴的方向（即项目的排列方向）。
   ```css
     flex-direction: row | row-reverse | column | column-reverse;
   ```
