@@ -18,7 +18,6 @@
       <text class="title">2、指令if/show</text>
       <text class="show-row" onclick="onClickShow">显示隐藏：</text>
       <text class="show-row" show="{{showVar}}">show: 渲染但控制是否显示</text>
-
       <text class="if-row" onclick="onClickCondition">条件指令：</text>
       <text class="if-row" if="{{conditionVar === 1}}">if: if条件</text>
       <text class="if-row" elif="{{conditionVar === 2}}">elif: elif条件</text>
@@ -53,12 +52,17 @@ text {
   background-color: #B0C4DE;
 }
 
-.for-template, .if-show-template, .block-template {
+.for-template,
+.if-show-template,
+.block-template {
   flex-direction: column;
   align-items: center;
 }
 
-.for-row, .if-row, .show-row, .block-row {
+.for-row,
+.if-row,
+.show-row,
+.block-row {
   margin-top: 10px;
   width: 85%;
 }

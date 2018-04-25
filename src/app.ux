@@ -13,22 +13,22 @@
 import util from './util'
 
 export default {
-    onCreate() {
-        console.info('Application onCreate')
-    },
-    onDestroy() {
-        console.info('Application onDestroy')
-    },
-    // 引入公共的JS资源，然后暴露给所有页面
-    // 在app.ux中，通过this.$def访问app.ux中定义的数据和方法
-    // 在pageName.ux中，通过this.$app.$def访问app.ux中定义的数据和方法
-    data1: {
-        name: 'Application data1.name'
-    },
-    method1() {
-        console.info('Application method1')
-    },
-    showMenu: util.showMenu,
-    createShortcut: util.createShortcut
+  onCreate() {
+    console.info('Application onCreate')
+  },
+  onDestroy() {
+    console.info('Application onDestroy')
+  },
+  // 引入公共的JS资源，然后暴露给所有页面
+  // 在app.ux中，通过this.$def访问app.ux中定义的数据和方法
+  // 在pageName.ux中，通过this.$app.$def访问app.ux中定义的数据和方法
+  data1: {
+    name: 'Application data1.name'
+  },
+  method1() {
+    console.info('Application method1')
+  },
+  showMenu: util.showMenu,
+  createShortcut: util.createShortcut
 }
 </script>
