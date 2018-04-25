@@ -4,7 +4,7 @@
 
 #### 容器的属性
 * flex-direction 属性决定主轴的方向（即项目的排列方向）。
-  ```
+  ```css
     flex-direction: row | row-reverse | column | column-reverse;
   ```
   * row（默认值）：主轴为水平方向，起点在左端。 row-reverse：主轴为水平方向，起点在右端。 column：主轴为垂直方向，起点在上沿。 column-reverse：主轴为垂直方向，起点在下沿。
