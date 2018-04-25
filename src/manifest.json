@@ -26,7 +26,10 @@
       "Pages/index": {
         "component": "index"
       },
-      "Pages/test": {
+      "Pages/test1": {
+        "component": "index"
+      },
+      "Pages/flex": {
         "component": "index"
       }
     }
@@ -44,8 +47,11 @@
         "titleBarText": "首页",
         "menu": false
       },
-      "Pages/test": {
-        "titleBarText": "测试页面"
+      "Pages/test1": {
+        "titleBarText": "测试页面1"
+      },
+      "Pages/flex": {
+        "titleBarText": "flex测试"
       }
     }
   }

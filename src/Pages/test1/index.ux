@@ -1,0 +1,81 @@
+<!-- 框架指令 -->
+<template>
+    <div class="index-page">
+        <!-- 指令for -->
+        <div class="for-template">
+            <!-- 方式1：默认$item代表数组中的元素, $idx代表数组中的索引 -->
+            <div class="for-row" for="{{list}}">
+                <text>{{$idx}}.{{$item.name}}</text>
+            </div>
+            <!-- 方式2：自定义元素变量名称 -->
+            <div class="for-row" for="value in list">
+                <text>{{$idx}}.{{value.name}}</text>
+            </div>
+            <!-- 方式3：自定义元素、索引的变量名称 -->
+            <div class="for-row" for="(personIndex, personItem) in list">
+                <text>{{personIndex}}.{{personItem.name}}</text>
+            </div>
+        </div>
+        <!-- 指令if与指令show -->
+        <!-- if条件指令，是指if/elif/else这3个相关指令，用于控制是否增加或者删除组件； -->
+        <!-- show指令，是指是否显示组件，用于控制组件的显示状态，并不会从DOM结构中删除 -->
+        <div class="if-show-page">
+            <text onclick="onClickShow">显示隐藏：</text>
+            <text show="{{showVar}}">show: 渲染但控制是否显示</text>
+
+            <text onclick="onClickCondition">条件指令：</text>
+            <text if="{{conditionVar === 1}}">if: if条件</text>
+            <text elif="{{conditionVar === 2}}">elif: elif条件</text>
+            <text else>else: 其余</text>
+        </div>
+    </div>
+</template>
+<style>
+text {
+    background-color: cyan;
+    text-align: center;
+}
+
+.index-page {
+    flex-direction: column;
+}
+
+.for-template {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.for-row {
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 85%;
+    background-color: green;
+    text-align: center;
+}
+
+.if-show-page {
+    flex-direction: column;
+}
+</style>
+<script>
+export default {
+    private: {
+        // for指令
+        list: [
+            { name: 'aa' },
+            { name: 'bb' }
+        ],
+        // if/show
+        showVar: true,
+        conditionVar: 1
+    },
+    onClickShow () {
+        this.showVar = !this.showVar
+    },
+    onClickCondition () {
+        this.conditionVar = ++this.conditionVar % 3
+    }
+}
+</script>
